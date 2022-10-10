@@ -1,0 +1,155 @@
+.slider {
+    border: 2px solid;
+    max-width: 60%;
+    margin: 20px auto;
+    background-color: blue;
+    overflow: hidden;
+
+}
+body{
+    background-color: rgb(126, 126, 199)
+}
+.slider-line{
+display: flex;
+background: orange;
+transition: all ease 1s;
+}
+.btn-container{
+   display: flex;
+   justify-content: center;
+}
+h1 {
+    text-align: center
+}
+
+/*HEADER*/
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+    width: 100%;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.ul-upper-menu {
+    display: flex;
+
+}
+.logo {
+    width: 3em;
+    height: 3em;
+    padding-top: 0.5em;
+    margin-bottom: 2em;
+    position: absolute;
+    left: 3em;
+}
+.ul-upper-menu li {
+    font-size: 1.5em;
+    padding-top: 1em;
+    padding-right: 3em;
+    margin-bottom: 2em;
+}
+.menu li {
+    padding-bottom: 1em;
+    font-size: 1.5em;
+}
+
+/* Гамбургер иконка */
+.menu-btn {
+	width: 30px;
+	height: 30px;
+    margin-top: 1em;
+	position: relative;
+	z-index:3;
+	overflow: hidden;
+    display: none;
+}
+
+.menu-btn span {
+	width: 30px;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #222222;
+	transition: all 0.5s;
+}
+
+.menu-btn span:nth-of-type(2) {
+	top: calc(50% - 5px);
+}
+.menu-btn span:nth-of-type(3) {
+	top: calc(50% + 5px);
+}
+
+/* Меняем гамбургер иконку, когда меню открыто */
+.menu-btn.active span:nth-of-type(1) {
+  display: none;
+}
+.menu-btn.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);  
+  z-index: 3;
+}
+.menu-btn.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg); 
+  z-index: 3;
+}
+
+/* Меню, которое будет появляться */
+.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 40%;
+	height: 100%;
+	padding: 15px;
+  background: #FFEFBA;
+	transform: translateX(-100%);
+	transition: transform 0.5s; 
+}
+
+.menu.active {
+	transform: translateX(0);
+    z-index: 2;
+}
+
+.menu li {
+	list-style-type: none;
+}
+@media(max-width: 800px) {
+    .menu-btn {
+        display: block;
+  
+    }
+.logo {
+    width: 3em;
+    height: 3em;
+    margin-bottom: 3em;
+    position: fixed;
+    left: 3em;
+    
+}
+.ul-upper-menu  {
+    display: none;
+    
+}
+header {
+    height: 4em;
+    justify-content: space-around;
+}
+}
